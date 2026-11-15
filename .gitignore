@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------- dependencies
+node_modules/
+
+# ---------------------------------------------------------------- build output
+# Rust / Tauri (exe, installer, intermediate files)
+src-tauri/target/
+# Tauri-generated schemas (recreated on every build)
+src-tauri/gen/
+# Local build outputs copied elsewhere
+dist/
+release/
+*.msi
+*-setup.exe
+
+# ---------------------------------------------------------------- user data / generated files
+# Mods built by the tool, game archives, and test artifacts
+*.scs
+*.bank
+*.tmp
+
+# ---------------------------------------------------------------- tools / test artifacts
+.playwright-mcp/
+coverage/
+*.log
+npm-debug.log*
+
+# ---------------------------------------------------------------- secrets
+.env
+.env.*
+!.env.example
+
+# ---------------------------------------------------------------- editor / OS
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini

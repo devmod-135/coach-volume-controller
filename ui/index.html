@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ETS2 Coach Sound Volume Controller</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="paths">
+      <label data-i18n="gameDir"></label>
+      <div class="path" id="gameDir">—</div>
+      <button id="btnGame" data-i18n="change"></button>
+
+      <label data-i18n="modDir"></label>
+      <div class="path" id="modDir">—</div>
+      <button id="btnModDir" data-i18n="change"></button>
+
+      <label data-i18n="currentMod"></label>
+      <div class="row">
+        <select id="modSelect"></select>
+        <span class="hint" id="modFileHint"></span>
+      </div>
+      <button id="btnDeleteMod" class="ghost danger" data-i18n="deleteMod"></button>
+
+      <label data-i18n="preset"></label>
+      <div class="row">
+        <select id="presetSelect"></select>
+        <button id="btnLoadPreset" data-i18n="load"></button>
+        <button id="btnSavePreset" data-i18n="saveAs"></button>
+        <button id="btnDeletePreset" class="ghost danger" data-i18n="delete"></button>
+        <button id="btnLoadFile" class="ghost" data-i18n="loadFile"></button>
+      </div>
+      <select id="langSelect" title="Language / 언어">
+        <option value="ko">🌐 한국어</option>
+        <option value="en">🌐 English</option>
+      </select>
+    </div>
+  </header>
+
+  <section class="filters">
+    <label><span data-i18n="vehicle"></span> <select id="coachFilter"></select></label>
+    <label><span data-i18n="category"></span> <select id="catFilter"></select></label>
+    <label class="check"><input type="checkbox" id="extToggle" checked /> <span data-i18n="showExt"></span></label>
+    <input type="search" id="search" data-i18n-ph="search" />
+  </section>
+
+  <section class="global">
+    <div class="g-title"><span data-i18n="globalTitle"></span> <span class="hint" data-i18n="globalHint"></span></div>
+    <input type="range" id="globalSlider" min="-30" max="20" step="0.5" value="0" />
+    <div class="g-value" id="globalValue">+0.0 dB (100%)</div>
+    <button id="btnGlobalZero" class="ghost small">0</button>
+  </section>
+
+  <main id="list"><div class="empty" data-i18n="loadingGame"></div></main>
+
+  <footer class="bottom">
+    <button id="btnBuild" class="primary" data-i18n="build"></button>
+    <button id="btnResetAll" data-i18n="resetAll"></button>
+    <div id="status"></div>
+  </footer>
+
+  <dialog id="modal">
+    <form method="dialog">
+      <h2 id="mTitle"></h2>
+      <div id="mBody"></div>
+      <div class="m-actions">
+        <button value="cancel" id="mCancel" class="ghost"></button>
+        <button value="ok" id="mOk" class="primary"></button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
